@@ -29,7 +29,7 @@ function App() {
 
         localStorage.setItem('favorites', '[]')
 
-        const res = await axios(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=e5d319f123370afcb66656135487030a&hash=${hash}`);
+        const res = await axios(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=e5d319f123370afcb66656135487030a&hash=${hash}`);
         console.log(res.data.data.results);
         setItems(res.data.data.results);
         setLoading(false);
@@ -45,7 +45,7 @@ function App() {
 
     }else {
 
-      const res = await axios(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=e5d319f123370afcb66656135487030a&hash=${hash}`);
+      const res = await axios(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=e5d319f123370afcb66656135487030a&hash=${hash}`);
       console.log(res.data.data.results);
       setItems(res.data.data.results);
       setLoading(false); 
